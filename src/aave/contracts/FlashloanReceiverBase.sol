@@ -1,9 +1,8 @@
-pragma solidity ^0.5.0;
+pragma solidity ^0.8.0;
 
 import "./IFlashLoanReceiver.sol";
 
 contract FlashLoanReceiverBase is IFlashLoanReceiver {
-    using SafeMath for uint256;
 
     address constant ETHADDRESS = 0xEeeeeEeeeEeEeeEeEeEeeEEEeeeeEeeeeeeeEEeE;
 
