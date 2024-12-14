@@ -1,14 +1,12 @@
-pragma solidity ^0.5.7;
+pragma solidity ^0.8.0;
 pragma experimental ABIEncoderV2;
 
-import "@openzeppelin/contracts/math/SafeMath.sol";
 import "@openzeppelin/contracts/token/ERC20/IERC20.sol";
 
 import "./ISoloMargin.sol";
 
 
 contract DydxFlashloanBase {
-    using SafeMath for uint256;
 
     // -- Internal Helper functions -- //
 
@@ -40,7 +38,7 @@ contract DydxFlashloanBase {
     {
         // Needs to be overcollateralize
         // Needs to provide +2 wei to be safe
-        return amount.add(2);
+        return amount + 2;
     }
 
     function _getAccountInfo() internal view returns (Account.Info memory) {
